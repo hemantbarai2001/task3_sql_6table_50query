@@ -1,0 +1,61 @@
+create table projects(
+project_id serial primary key,
+project_name varchar not null,
+start_date date not null,
+end_date date,
+status varchar not null check (status in ('Planned','Ongoing','Completed','On Hold')),
+budget numeric(12,2) not null check (budget >=50000),
+client_id int not null references clients(client_id),
+dept_id int not null references departments(dept_id)
+
+);
+
+select * from projects; 
+
+
+INSERT INTO projects (project_name, start_date, end_date, status, budget, client_id, dept_id) VALUES
+('Website Revamp – TechNova', '2023-01-15', '2023-06-30', 'Completed', 250000.00, 47, 1),
+('Construction ERP System', '2023-04-01', NULL, 'Ongoing', 450000.00, 48, 2),
+('Foodie Point Online Ordering App', '2023-03-10', '2023-08-15', 'Completed', 180000.00, 49, 3),
+('StyleStreet Ecommerce Website', '2023-09-01', NULL, 'Ongoing', 220000.00, 50, 4),
+('AutoDrive CRM Software', '2024-02-01', NULL, 'Planned', 300000.00, 51, 5),
+('DreamHomes Property Portal', '2023-11-20', '2024-04-20', 'Ongoing', 350000.00, 52, 6),
+('MediCare Patient Management', '2022-07-01', '2023-03-30', 'Completed', 280000.00, 53, 7),
+('EduSmart LMS Platform', '2023-06-10', NULL, 'Ongoing', 200000.00, 54, 8),
+('FinPro Accounting Dashboard', '2023-05-15', '2023-12-20', 'Completed', 270000.00, 55, 9),
+('TravelEase Booking Portal', '2024-01-05', NULL, 'Planned', 150000.00, 56, 10),
+('FreshMart Inventory System', '2022-12-12', '2023-09-10', 'Completed', 190000.00, 57, 1),
+('CityRide Driver App', '2023-10-01', NULL, 'Ongoing', 210000.00, 58, 2),
+('Healthify Fitness Tracker', '2023-02-15', '2023-08-30', 'Completed', 160000.00, 59, 3),
+('Bloom Interiors Portfolio Site', '2024-03-01', NULL, 'Planned', 90000.00, 60, 4),
+('AquaPure Customer Portal', '2023-05-05', '2023-10-15', 'Completed', 110000.00, 61, 5),
+('FarmFresh Mobile App', '2023-06-20', NULL, 'Ongoing', 175000.00, 62, 6),
+('BuildMate B2B Platform', '2022-11-11', '2023-07-01', 'Completed', 400000.00, 63, 7),
+('SnapAds Campaign Manager', '2023-09-01', NULL, 'Ongoing', 230000.00, 64, 8),
+('BookNest eBook Portal', '2023-10-10', NULL, 'Ongoing', 180000.00, 65, 9),
+('PixelPro Design Showcase', '2022-08-15', '2023-02-10', 'Completed', 95000.00, 66, 10),
+('MegaByte Cloud Migration', '2023-12-01', NULL, 'Planned', 480000.00, 67, 1),
+('HomeWise Property CMS', '2023-01-05', '2023-07-15', 'Completed', 200000.00, 68, 2),
+('CloudCore Data Platform', '2023-03-20', '2023-09-20', 'Completed', 420000.00, 69, 3),
+('GreenLeaf Ordering Portal', '2024-02-10', NULL, 'Planned', 175000.00, 70, 4),
+('FitPro Member App', '2023-09-01', NULL, 'Ongoing', 160000.00, 71, 5),
+('AutoHub Garage Manager', '2023-04-15', '2023-11-10', 'Completed', 200000.00, 72, 6),
+('LearnUp Virtual Classroom', '2023-06-12', NULL, 'Ongoing', 250000.00, 73, 7),
+('ShopMate POS System', '2022-09-05', '2023-03-25', 'Completed', 190000.00, 74, 8),
+('MediLife Hospital ERP', '2023-01-25', NULL, 'Ongoing', 320000.00, 75, 9),
+('BrightPay Loan Management', '2024-03-01', NULL, 'Planned', 400000.00, 76, 10),
+('Urban Travel Co Website', '2023-02-01', '2023-09-01', 'Completed', 120000.00, 77, 1),
+('Elite Realty Property Listing', '2023-06-01', '2023-12-01', 'Completed', 180000.00, 78, 2),
+('NextGen SaaS Platform', '2023-09-15', NULL, 'Ongoing', 500000.00, 79, 3),
+('QuickServe Tracking System', '2022-10-01', '2023-04-01', 'Completed', 230000.00, 80, 4),
+('SmartWorks Ad Analytics', '2023-11-20', NULL, 'Planned', 300000.00, 81, 5),
+('CloudX Data Dashboard', '2023-03-10', '2023-09-10', 'Completed', 150000.00, 82, 6),
+('PrintWorld Order System', '2023-05-05', NULL, 'Ongoing', 95000.00, 83, 7),
+('FineArt E-Gallery', '2023-07-15', '2024-01-30', 'Ongoing', 110000.00, 84, 8),
+('TechBridge CRM Integration', '2023-02-20', '2023-08-25', 'Completed', 250000.00, 85, 9),
+('MediPlus Lab System', '2024-01-15', NULL, 'Planned', 210000.00, 86, 10),
+('GoExplore Tour Booking App', '2023-05-01', '2023-11-15', 'Completed', 170000.00, 87, 1),
+('EduPrime LMS Upgrade', '2023-08-10', NULL, 'Ongoing', 195000.00, 88, 2),
+('AgriNova Crop Tracker', '2023-09-25', NULL, 'Ongoing', 120000.00, 89, 3),
+('NovaPrint Publication Portal', '2023-01-10', '2023-06-10', 'Completed', 160000.00, 90, 4);
+
